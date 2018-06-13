@@ -1,0 +1,37 @@
+Initial plan:
+
+Assumptions:
+
+- Ideal end goal would be a automated build then test system, for CI.
+- No more come to mind at the beginning. Will add as I progress.
+
+Tests:
+
+- Test object interface not implementation. A refactor shouldn't break the
+test suite. More applicable to unit testing, however, still a meaningful
+approach to all testing.
+
+Tools:
+
+A ruby based integration testing tool? Enter Capybara. Chosen as I'm familiar.
+
+Is Cucumber beneficial in the exercise?
+
+  Cucumber's primary purpose is to lower the technical jargon required to
+understand a test suite. A low priority at this stage I will revisit as
+exercise progresses.
+
+Bad project name:
+
+Economist + exercise = Ecocise.
+
+Project structure:
+
+  Ideally, two containerized web applications (Bikes & Ecocise) running on
+Kubernetes. Ecocise will be a Rails app which can receive a POST request to
+trigger the test suite and store the results appropriately. This would allow
+for future iterations to move towards a CI process with automated builds
+triggering the test suite.
+  However, I have limited time. The first iteration will be two containerized
+apps which are run manually, with the test suite being triggered in Ecocise
+through a bash shell in the container. This is a more realistic goal.

@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
 
-Things you may want to cover:
+This is a simple Rails app that runs an intergration test suite on the Bikes
+application. The app uses Capybara and Firefox.
 
-* Ruby version
+## Setup
 
-* System dependencies
+### Install the mozilla geckodriver.
 
-* Configuration
+See https://github.com/mozilla/geckodriver/releases
 
-* Database creation
+### Install the Bikes (test-testers) application
 
-* Database initialization
+Clone the repo from https://github.com/jujhars13/test-testers.
 
-* How to run the test suite
+Enter the new directory and run
 
-* Services (job queues, cache servers, search engines, etc.)
+`docker run -it -v ${PWD}/app:/usr/share/nginx/html:ro -p 80:80 nginx:1.13`
 
-* Deployment instructions
+### Install Ecocise
 
-* ...
+Clone the repo from https://github.com/patrickquigley102/ecocise
+
+## Run the Intergration Test Suite
+
+Enter to project directory and run `rspec`.
+
+This is a standard Rails application, see http://guides.rubyonrails.org/ for
+more usage.

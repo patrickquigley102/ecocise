@@ -1,0 +1,25 @@
+I've run out of time I'm able to spend on this exercise. It was enjoyable and
+I have covered the basics however, there is room for improvement.
+
+This should demonstrate my approach to such tasks adequately.
+
+Next steps if I had more time.
+
+- Determine way clear the Bikes application session data from with Capybara.
+This would allow RSpec to use a random order of execution. Currently, this
+project must execute the specs alphabetically which is brittle.
+- DRY up the specs slightly, using RSpec's shared contexts.
+- Decouple the specs from the DOM as much as possible.
+- Create root page for Ecocise, with a button to trigger tests and means to
+display the results in the browser.
+- Use a Helm chart to create a Kubernetes deployment for these services.
+
+Comments on my approach.
+
+- I normally practice trunk-based development in git. That seemed redundant for
+the purpose of the exercise as there was one contributor.
+
+
+Thank you for your time, Patrick.
+
+P.S. As a cyclist, I enjoyed the theme!

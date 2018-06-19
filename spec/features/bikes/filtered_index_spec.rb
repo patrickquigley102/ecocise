@@ -1,22 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Bikes application', type: :feature, js: true do
-  before do
-    # Tell Capybara to test an external application, the Bike application.
-    Capybara.app_host = 'http://127.0.0.1:80'
-  end
+  include_context 'bikes'
+  include_context 'bikes index'
 
   describe 'visiting \the index page' do
-    before { visit '/' }
-
-    let(:bike_data_url) { 'http://localhost:80/bikes.json'}
-    let(:bike_data) { JSON.load(open(bike_data_url)) }
-
     context 'when bike data exists' do
-      let(:bike_count) { bike_data['items'].count }
-      let(:index_item_count) { 7 }
-
-      context 'when a class filter applied' do
+      context 'when a class filter is applied' do
         let(:bike_class) { bike_data['items'].first['class'].first.capitalize }
 
         before do
@@ -33,7 +23,9 @@ RSpec.describe 'Bikes application', type: :feature, js: true do
             expect(desc.text).to include(bike_class)
           end
 
+          # Refresh the page
           visit '/'
+
           page.all('div.panel-footer').each do |desc|
             expect(desc.text).to include(bike_class)
           end

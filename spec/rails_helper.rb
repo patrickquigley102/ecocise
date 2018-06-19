@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require './spec/features/bikes/shared/bikes'
 require './spec/features/bikes/shared/index'
+require './lib/test_suite'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

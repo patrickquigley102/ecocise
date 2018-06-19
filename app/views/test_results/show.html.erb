@@ -1,3 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
+<%=@test_result.rspec_output.html_safe unless @test_result.rspec_output.nil? %>
+
 <%= link_to 'Back', test_results_path %>

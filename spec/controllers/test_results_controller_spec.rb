@@ -54,6 +54,10 @@ RSpec.describe TestResultsController, type: :controller do
   end
 
   describe "POST #create" do
+    before do
+      stub_const('ENV', ENV.to_hash.merge('RSPEC_TEST_SUITE_COMMAND' => 'echo test'))
+    end
+
     context "with valid params" do
       it "creates a new TestResult" do
         expect {

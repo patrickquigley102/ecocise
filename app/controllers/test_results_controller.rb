@@ -1,4 +1,8 @@
+require './lib/test_suite'
+
 class TestResultsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   # GET /test_results
   # GET /test_results.json
   def index
@@ -14,7 +18,7 @@ class TestResultsController < ApplicationController
   # POST /test_results
   # POST /test_results.json
   def create
-    @test_result = TestResult.new(test_result_params)
+    @test_result = TestSuite.new.run
 
     respond_to do |format|
       if @test_result.save

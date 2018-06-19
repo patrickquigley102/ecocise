@@ -23,3 +23,29 @@ the purpose of the exercise as there was one contributor.
 Thank you for your time, Patrick.
 
 P.S. As a cyclist, I enjoyed the theme!
+
+
+* Update, after taking more time on the exercise *
+export RSPEC_TEST_Sexport RSPEC_TEST_SUITE_COMMAND='rspec spec/features/ --format html'
+UITE_COMMAND='rspec spec/features/ --format html'
+
+
+I've ran out of time I can spend on this exercise again. This is a basic test
+suite but, it is possible to automate as is with GitHub webhooks.
+
+Possible Improvements:
+
+- Create Kubenetes deployment. Would make deploying this project much easier,
+and scalable.
+- Use Cucumber to mirror the user journeys as laid out in the instructions.
+This would increase the readability of the tests, and align better with the
+requirements.
+- Setup authentication and `https` certs using Lets Encrypt for Ecocise.
+Mandatory if this was ever released into the wild.
+- Improve the UI of Ecocise.
+
+
+Thanks again for your time, I hope this exercise demonstrates my though process
+well.
+
+Patrick.

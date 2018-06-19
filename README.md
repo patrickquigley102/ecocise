@@ -23,21 +23,12 @@ Clone the repo from https://github.com/patrickquigley102/ecocise
 
 First start the Bikes application.
 
-Enter the test-testers directory
-
-`docker run -it -v ${PWD}/app:/usr/share/nginx/html:ro -p 80:80 nginx:1.13`
+`cd <test-testers-dir> && docker run -it -v ${PWD}/app:/usr/share/nginx/html:ro -p 80:80 nginx:1.13`
 
 Then start the rails server.
 
-Enter the ecocise directory
-
-'rails s'
+`cd <ecocise-dir> && export RSPEC_TEST_SUITE_COMMAND='rspec spec/features/ --format html' && rails s`
 
 Then issue a post request `curl 0.0.0.0:3000/test_results -X POST`.
 
-Alternatively, locally you can.
-
-Enter to project directory and run `rspec`.
-
-This is a standard Rails application, see http://guides.rubyonrails.org/ for
-more usage.
+You can view the result at `0.0.0.0:3000/test_results`.

@@ -38,6 +38,14 @@ RSpec.describe 'Bikes application', type: :feature, js: true do
             expect(desc.text).to include(bike_class)
           end
         end
+
+        after do
+          # Reset the filter selected previously.
+          find('div[ng-repeat=\'attr in attributesToFilter\']')
+          .find(' span', text: bike_class)
+          .sibling('input')
+          .click
+        end
       end
     end
   end
